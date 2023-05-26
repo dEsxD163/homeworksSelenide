@@ -2,9 +2,9 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
+
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -19,7 +19,7 @@ class DeliveryCardOrderTest {
     }
     String meetingDate = generateDate(3);
 
-    /*@Test
+    @Test
     void DeliveryCardOrderTest1() {
 
         open("http://localhost:9999");
@@ -31,7 +31,7 @@ class DeliveryCardOrderTest {
         $("[data-test-id=agreement]").click();
         $(withText("Забронировать")).click();
         $(byText("Успешно!")).shouldBe(visible, Duration.ofMillis(15000));
-    }*/
+    }
     @Test
     void DeliveryCardOrderTest2() {
         open("http://localhost:9999");

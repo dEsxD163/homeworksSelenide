@@ -18,7 +18,6 @@ class DeliveryCardOrderTest {
     String generateDate (int dayToAdd) {
         return LocalDate.now().plusDays(dayToAdd).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
-    String meetingDate = generateDate(3);
 
     @Test
     void deliveryCardOrderTest1() {

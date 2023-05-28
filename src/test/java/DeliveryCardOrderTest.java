@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 
 import java.time.Duration;
@@ -20,11 +21,12 @@ class DeliveryCardOrderTest {
     String meetingDate = generateDate(3);
 
     @Test
-    void DeliveryCardOrderTest1() {
+    void deliveryCardOrderTest1() {
+        String meetingDate = generateDate(3);
 
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Казань");
-        $("[data-test-id=date] input").clear();
+        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(meetingDate);
         $("[data-test-id=name] input").setValue("Заседателев Дмитрий");
         $("[data-test-id=phone] input").setValue("+79271234567");
@@ -33,10 +35,12 @@ class DeliveryCardOrderTest {
         $(byText("Успешно!")).shouldBe(visible, Duration.ofMillis(15000));
     }
     @Test
-    void DeliveryCardOrderTest2() {
+    void deliveryCardOrderTest2() {
+        String meetingDate = generateDate(3);
+
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Казань");
-        $("[data-test-id=date] input").clear();
+        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(meetingDate);
         $("[data-test-id=name] input").setValue("Заседателев Дмитрий");
         $("[data-test-id=phone] input").setValue("+79271234567");
@@ -46,10 +50,12 @@ class DeliveryCardOrderTest {
     }
 
     @Test
-    void DeliveryCardOrderTest3() {
+    void deliveryCardOrderTest3() {
+        String meetingDate = generateDate(5);
+
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Казань");
-        $("[data-test-id=date] input").clear();
+        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(meetingDate);
         $("[data-test-id=name] input").setValue("Заседателев Дмитрий");
         $("[data-test-id=phone] input").setValue("+79271234567");
